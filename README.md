@@ -1,3 +1,3 @@
-# apiCalypse
+# discrete-integration
 
-apiCalypse repository
+discrete-integration repository
