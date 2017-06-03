@@ -23,7 +23,7 @@ The slave itself is not run within a docker container, because aspirin costs mor
     - Username: `jenkins`
     - *No restrictions on other fields.*
 
-## Setup slave
+## Setup server
 
 Assuming fresh install of headless Ubuntu 16.04.2 LTS.
 
@@ -73,3 +73,19 @@ These are not scripts, do not put in a file and run blindly.
     
     # Restart
     shutdown -r now
+
+## Configure node
+
+- Add slave on Jenkins host
+  - (Top) Jenkins > Manage Jenkins > Manage Nodes
+  - (Left) New Node
+  - (Body)
+    - Remote root directory: /home/jenkins/
+    - Labels: `docker` (Optional, but this helps for docker-specific operations outside a container)
+    - Launch method: Launch slave agents via SSH
+      - Host: Slave IP address or domain
+      - Credentials: *created earlier*
+      - Host Key Verification Strategy: Manually trusted key Verification Strategy
+        - The first time, run without without the checkbox Require manual verification of initial connection.
+        - After the first successful connection, check this box.
+    - *No restrictions on other fields.*
