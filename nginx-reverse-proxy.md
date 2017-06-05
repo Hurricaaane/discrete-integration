@@ -9,4 +9,4 @@ However if any of the containers is not running or does not exist when nginx con
     2017/06/05 14:52:02 [emerg] 1#1: host not found in upstream "your_upstream_container_name" in /etc/nginx/nginx.conf:19
     nginx: [emerg] host not found in upstream "your_upstream_container_name" in /etc/nginx/nginx.conf:19
 
-This is circumventable by putting the name of the container inside a variable, then using this variable in place of the upstream host name3
+This is circumventable by putting the name of the container inside a variable, then using this variable in place of the upstream host name.
